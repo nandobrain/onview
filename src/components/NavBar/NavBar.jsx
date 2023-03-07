@@ -10,6 +10,8 @@ export default function NavBar({ user, setUser }) {
 
     return (
         <nav>
+            <h1>On View</h1>
+            
             <Link to="/orders">Order History</Link>
             &nbsp; | &nbsp;
             <Link to="/orders/new">New Order</Link>
