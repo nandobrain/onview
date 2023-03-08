@@ -1,3 +1,6 @@
-export default function NewOrderPage() {
-    return <h1>NewOrderPage</h1>
+
+
+
+export default function ArtistPortfolioPage(portfolio) {
+    return <h1>Artist</h1>
 }

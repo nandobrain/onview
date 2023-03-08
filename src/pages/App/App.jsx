@@ -3,9 +3,11 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../ArtistPortfolioPage/ArtistPortfolioPage';
-import OrderHistoryPage from '../GalleryDetailsPage/GalleryDetailsPage';
 import NavBar from '../../components/NavBar/NavBar'
+import GalleryDetailsPage from '../GalleryDetailsPage/GalleryDetailsPage';
+import ArtistDetailPage from '../ArtistDetailsPage/ArtistDetailsPage';
+import ArtistPortfolioPage from '../ArtistPortfolioPage/ArtistPortfolioPage';
+import ArtistIndexPage from '../ArtistsIndexPage/ArtistsIndexPage'
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -17,8 +19,10 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/gallery/detail" element={<GalleryDetailsPage user={user} setUser={setUser} />} />
+            <Route path="/about" element={<ArtistDetailPage user={user} setUser={setUser} />} />
+            <Route path="/gallery" element={<ArtistPortfolioPage user={user} setUser={setUser} />} />
+            <Route path="/artists" element={<ArtistIndexPage user={user} setUser={setUser} />} />
           </Routes>
         </>
         :

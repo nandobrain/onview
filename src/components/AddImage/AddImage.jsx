@@ -16,7 +16,7 @@ export default function AddImage({ setUser }) {
             formData.append("file", image);
             formData.append("upload_preset", "presetName");
             const dataRes = await axios.post(
-            "yourUrl",
+            "`${BASE_URL}/check-token`",
             formData
             );
             imageUrl = dataRes.data.url;
