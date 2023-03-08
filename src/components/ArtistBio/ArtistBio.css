@@ -5,9 +5,7 @@
     background-color: lightgrey;
     padding: 1rem;
     width: 20rem;
-    margin: 2rem auto;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+ 
   }
   
   .form label {
@@ -22,11 +20,11 @@
     display: block;
     width: 100%;
     font: inherit;
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 6px;
     border: none;
     background-color: white;
-    color: #28262c;
+    color: #020202;
   }
   
   .actions {

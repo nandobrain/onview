@@ -1,28 +1,19 @@
-import { useState } from 'react';
+
 import './ArtistInfo.css'
 
-export default function ArtistInfo() {
-    const [ enteredBody, setEnteredBody ] = useState('')
-   
-    function changeBodyHandler(event) {
-        setEnteredBody(event.target.value)
-
-    }
-    
-    
-    
+export default function ArtistInfo(props) {
     return (
         <form className="form">
           <p>
             <label htmlFor="name">Artist</label>
-            <input id="text" require onChange={changeBodyHandler}/>
+            <input type="text" id="name" require onChange={props.onPersonChange}/>
           </p>
           
           <p>
-            <label htmlFor="body">Info</label>
-            <textarea type="body" id="name" require onChange={changeBodyHandler} />
+            <label htmlFor="body">info</label>
+            <textarea id="body" require rows={3} onChange={props.onInfoChange} />
           </p>
-          <p>{enteredBody}</p>
+          
         </form>
     )
 }
