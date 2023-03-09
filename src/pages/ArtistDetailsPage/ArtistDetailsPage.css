@@ -1,5 +1,19 @@
+.body-container {
+  display: flex;
+  flex-direction: row;
+}
 
+.body-left {
+  flex-basis: 66.67%;
+  padding: 20px;
+}
 
+.body-right {
+  flex-basis: 33.33%;
+  padding: 20px;
+  margin-top: 30px;
+  border-left: 1px solid black;
+}
 .posts {
     list-style: none;
     max-width: 50rem;

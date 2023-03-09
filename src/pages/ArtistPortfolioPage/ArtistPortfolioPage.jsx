@@ -5,6 +5,7 @@ import Modal from '../../components/Modal/Modal';
 import TextButton from '../../components/TextButton/TextButton';
 import Info from '../../components/Info/Info';
 import AddImage from '../../components/AddImage/AddImage';
+import './ArtistPortfolioPage.css'
 
 export default function ArtistPortfolioPage(user, setUser) {
     const [modalIsVisible, setModalIsVisible] = useState(true)
@@ -33,28 +34,42 @@ export default function ArtistPortfolioPage(user, setUser) {
     
     return (
         <>
-      
-        
-        <p></p>
-        
+            <div className="body-container">
 
-        {modalIsVisible &&  (
-        <Modal onClose={hideModalHandler}>
-          <ArtistInfo onInfoChange={infoChangeHandler} onPersonChange={personChangeHandler}/>
-        </Modal>
-         )}
+                <div className="body-left">
+                <AddImage />
 
-        <TextButton onCreatePost={showModalHandler}/>
-        <ul className="post">
-            <Info person={enteredPerson} info={enteredInfo} />
 
-        </ul>
-
-        <ul>
+                </div>
             
-        </ul>
+                <p></p>
+                <div className="body-right">
+                    <div><AddImage /></div>
+                    
 
-        <AddImage />
+                    {modalIsVisible &&  (
+                    <Modal onClose={hideModalHandler}>
+                    <ArtistInfo onInfoChange={infoChangeHandler} onPersonChange={personChangeHandler}/>
+                    </Modal>
+                    )}
+
+                    <TextButton onCreatePost={showModalHandler}/>
+                    <ul className="post">
+                        <Info person={enteredPerson} info={enteredInfo} />
+                    
+                    </ul>
+                    
+                </div>
+
+                <ul>
+                    
+                </ul>
+
+                
+        
+
+            </div>
+
         </>
     )
 }

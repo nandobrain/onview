@@ -10,13 +10,17 @@ export default function NavBar({ user, setUser }) {
     }
 
     return (
-        <nav>
-           <div className="NavBar">
+        <nav className="NavBar">
+           <div className="header-text">
             <h1>On View</h1>
-            
+           </div>
+           <div className="header-links">
             <Link to="/artist">ARTIST</Link>
-           
+            &nbsp;&nbsp;
+            &nbsp;&nbsp;
             <Link to="/work">WORK</Link>
+            &nbsp;&nbsp;
+            &nbsp;&nbsp;
             <Link to="/about">ABOUT</Link>
             &nbsp;&nbsp; {user.name}
             &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>

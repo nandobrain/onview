@@ -6,6 +6,9 @@ import Bio from '../../components/Bio/Bio';
 import Info from '../../components/Info/Info';
 import Modal from '../../components/Modal/Modal';
 import TextButton from '../../components/TextButton/TextButton';
+import AddImage from '../../components/AddImage/AddImage';
+import Page from '../../components/Page/Page';
+import PageName from '../../components/PageName/PageName';
 import './ArtistDetailsPage.css'
 
 import * as artistInfoAPI from '../../utilities/artistInfo-api'
@@ -17,6 +20,8 @@ export default function ArtistDetailPage(user, setUser) {
     const [enteredAuthor, setEnteredAuthor] = useState('')
     const [enteredPerson, setEnteredPerson] = useState('')
     const [enteredInfo, setEnteredInfo] = useState('')
+    const [enteredPage, setEnteredPage] = useState('')
+    const [enteredArtist, setEnteredArtist] = useState('')
     
     
 
@@ -44,41 +49,68 @@ export default function ArtistDetailPage(user, setUser) {
         setEnteredInfo(event.target.value)
     }
 
+    function pageChangeHandler(event) {
+        setEnteredPage(event.target.value)
+    }
+
+    function artistChangeHandler(event) {
+        setEnteredArtist(event.target.value)
+    }
+
 
 
 
     return (
+
+       
         <>
-        {modalIsVisible && (
-        <Modal onClose={hideModalHandler}>
-          <ArtistBio onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}/>
-        </Modal>
-        )}
-        
-        <p></p>
-        
+        <div className="body-container">
 
-        {modalIsVisible &&  (
-        <Modal onClose={hideModalHandler}>
-          <ArtistInfo onInfoChange={infoChangeHandler} onPersonChange={personChangeHandler}/>
-        </Modal>
-         )}
+            <div className="body-left">
+                {modalIsVisible && (
+                <Modal onClose={hideModalHandler}>
+                <PageName onPageChange={pageChangeHandler} onArtistChange={artistChangeHandler}/>
+                </Modal>
+                )}
+                <TextButton onCreatePost={showModalHandler}/>
+                <ul className="post">
+                    <Page author={enteredPage} body={enteredArtist} />
+                </ul>
+                <AddImage />
 
-        <TextButton onCreatePost={showModalHandler}/>
-        <ul className="post">
-            <Bio author={enteredAuthor} body={enteredBody} />
-        </ul>
-        <TextButton onCreatePost={showModalHandler}/>
-        <ul className="post">
-            <Info person={enteredPerson} info={enteredInfo} />
+                {modalIsVisible && (
+                <Modal onClose={hideModalHandler}>
+                <ArtistBio onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}/>
+                </Modal>
+                )}
+                <TextButton onCreatePost={showModalHandler}/>
+                <ul className="post">
+                    <Bio author={enteredAuthor} body={enteredBody} />
+                </ul>
 
-        </ul>
+            </div>
+            <p></p>
+            <div className="body-right">
 
-        <ul>
-           
-        </ul>
+                {modalIsVisible &&  (
+                <Modal onClose={hideModalHandler}>
+                <ArtistInfo onInfoChange={infoChangeHandler} onPersonChange={personChangeHandler}/>
+                </Modal>
+                )}
 
-        
+                
+                <TextButton onCreatePost={showModalHandler}/>
+                <ul className="post">
+                    <Info person={enteredPerson} info={enteredInfo} />
+
+                </ul>
+            </div>
+
+            <ul>
+            
+            </ul>
+
+        </div>
 
 
         </>

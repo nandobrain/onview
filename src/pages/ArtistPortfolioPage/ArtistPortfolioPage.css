@@ -1,0 +1,28 @@
+.body-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .body-left {
+    flex-basis: 66.67%;
+    padding: 20px;
+  }
+  
+  .body-right {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33.33%;
+    padding: 20px;
+    margin-top: 30px;
+    border-left: 1px solid black;
+  }
+  .posts {
+      list-style: none;
+      max-width: 50rem;
+      margin: 1rem auto;
+      padding: 1rem 0;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 30%);
+      justify-content: center;
+    }
