@@ -11,12 +11,13 @@ import './ArtistDetailsPage.css'
 import * as artistInfoAPI from '../../utilities/artistInfo-api'
 
 
-export default function ArtistDetailPage(user) {
+export default function ArtistDetailPage(user, setUser) {
     const [modalIsVisible, setModalIsVisible] = useState(true)
     const [enteredBody, setEnteredBody] = useState('')
     const [enteredAuthor, setEnteredAuthor] = useState('')
     const [enteredPerson, setEnteredPerson] = useState('')
     const [enteredInfo, setEnteredInfo] = useState('')
+    
     
 
     function hideModalHandler() {
@@ -43,16 +44,7 @@ export default function ArtistDetailPage(user) {
         setEnteredInfo(event.target.value)
     }
 
-    // let modalContent;
 
-    // if (modalIsVisible) {
-    //     modalContent =  (
-    //         <Modal onClose={hideModalHandler}>
-    //         <ArtistBio onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}/>
-    //       </Modal>
-
-    //     )
-    // }
 
 
     return (
@@ -81,6 +73,12 @@ export default function ArtistDetailPage(user) {
             <Info person={enteredPerson} info={enteredInfo} />
 
         </ul>
+
+        <ul>
+           
+        </ul>
+
+        
 
 
         </>

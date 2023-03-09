@@ -1,6 +1,6 @@
 import './Bio.css'
 
-export default function Bio({ author, body, person, info}) {
+export default function Bio({ author, body}) {
     return (
       <>
         <div className="post">
@@ -9,10 +9,7 @@ export default function Bio({ author, body, person, info}) {
             
             
         </div>
-        <div className="post">
-            <p className="post">{person}</p>
-            <p className="post">{info}</p>
-        </div>
+      
         
         </>
     )

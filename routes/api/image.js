@@ -1,7 +1,7 @@
 
 const express = require("express");
 const router = express.Router();
-const Image = require("../model/image");
+const Image = require("../../models/image");
 
 router.post("/store-image", async (req, res) => {
   try {
