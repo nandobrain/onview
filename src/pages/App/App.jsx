@@ -7,7 +7,7 @@ import NavBar from '../../components/NavBar/NavBar'
 import GalleryDetailsPage from '../GalleryDetailsPage/GalleryDetailsPage';
 import ArtistDetailPage from '../ArtistDetailsPage/ArtistDetailsPage';
 import ArtistPortfolioPage from '../ArtistPortfolioPage/ArtistPortfolioPage';
-import ArtistIndexPage from '../ArtistsIndexPage/ArtistsIndexPage'
+import ArtistsIndexPage from '../ArtistsIndexPage/ArtistsIndexPage'
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -22,7 +22,7 @@ export default function App() {
             <Route path="/gallery/detail" element={<GalleryDetailsPage user={user} setUser={setUser} />} />
             <Route path="/about" element={<ArtistDetailPage user={user} setUser={setUser} />} />
             <Route path="/work" element={<ArtistPortfolioPage user={user} setUser={setUser} />} />
-            {/* <Route path="/artists" element={<ArtistIndexPage user={user} setUser={setUser} />} /> */}
+            <Route path="/artist" element={<ArtistsIndexPage user={user} setUser={setUser} />} />
           </Routes>
         </>
         :
