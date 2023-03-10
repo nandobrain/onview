@@ -14,7 +14,7 @@ export default function AddImage({ setUser }) {
         
         e.preventDefault();
         console.log(image)
-        let formData =  new FormData();
+        let data =  new FormData();
         
         
         try {
@@ -22,13 +22,13 @@ export default function AddImage({ setUser }) {
         if (image) {
             
             
-            formData.file = image
-            formData.upload_preset = "rqunuhhm"
+            data.append('file', image) 
+            data.append('upload_preset', "rqunuhhm")
             
-            
+            console.log(data)
             const dataRes = await axios.post(
-           "https://api.cloudinary.com/v1_1/dknwufbvr",
-            formData
+           "https://api.cloudinary.com/v1_1/dknwufbvr/image/upload",
+            data, 
             );
             imageUrl = dataRes.data.url;
             
@@ -37,7 +37,7 @@ export default function AddImage({ setUser }) {
         const submitPost = {
             image: imageUrl,
         };
-        
+        console.log(submitPost)
        await axios.post("http://localhost:3001/api/image/store-image", submitPost);
         } catch (err) {
         err.response.data.msg && setError(err.response.data.msg);

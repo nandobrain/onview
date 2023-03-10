@@ -5,12 +5,16 @@ import Modal from '../../components/Modal/Modal';
 import TextButton from '../../components/TextButton/TextButton';
 import Info from '../../components/Info/Info';
 import AddImage from '../../components/AddImage/AddImage';
+import Page from '../../components/Page/Page';
+import PageName from '../../components/PageName/PageName';
 import './ArtistPortfolioPage.css'
 
 export default function ArtistPortfolioPage(user, setUser) {
     const [modalIsVisible, setModalIsVisible] = useState(true)
     const [enteredPerson, setEnteredPerson] = useState('')
     const [enteredInfo, setEnteredInfo] = useState('')
+    const [enteredPage, setEnteredPage] = useState('')
+    const [enteredArtist, setEnteredArtist] = useState('')
     
     function hideModalHandler() {
         setModalIsVisible(false);
@@ -27,6 +31,14 @@ export default function ArtistPortfolioPage(user, setUser) {
     function infoChangeHandler(event) {
         setEnteredInfo(event.target.value)
     }
+
+    function pageChangeHandler(event) {
+        setEnteredPage(event.target.value)
+    }
+
+    function artistChangeHandler(event) {
+        setEnteredArtist(event.target.value)
+    }
     
     
     
@@ -37,7 +49,16 @@ export default function ArtistPortfolioPage(user, setUser) {
             <div className="body-container">
 
                 <div className="body-left">
-                <AddImage />
+                    {modalIsVisible && (
+                    <Modal onClose={hideModalHandler}>
+                    <PageName onPageChange={pageChangeHandler} onArtistChange={artistChangeHandler}/>
+                    </Modal>
+                    )}
+                    <TextButton onCreatePost={showModalHandler}/>
+                    <ul className="post">
+                        <Page author={enteredPage} body={enteredArtist} />
+                    </ul>
+                    <AddImage />
 
 
                 </div>

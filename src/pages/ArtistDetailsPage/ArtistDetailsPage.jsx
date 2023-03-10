@@ -22,6 +22,7 @@ export default function ArtistDetailPage(user, setUser) {
     const [enteredInfo, setEnteredInfo] = useState('')
     const [enteredPage, setEnteredPage] = useState('')
     const [enteredArtist, setEnteredArtist] = useState('')
+
     
     
 
@@ -56,6 +57,8 @@ export default function ArtistDetailPage(user, setUser) {
     function artistChangeHandler(event) {
         setEnteredArtist(event.target.value)
     }
+  
+
 
 
 
@@ -69,7 +72,10 @@ export default function ArtistDetailPage(user, setUser) {
             <div className="body-left">
                 {modalIsVisible && (
                 <Modal onClose={hideModalHandler}>
-                <PageName onPageChange={pageChangeHandler} onArtistChange={artistChangeHandler}/>
+                <PageName 
+                    onPageChange={pageChangeHandler} 
+                    onArtistChange={artistChangeHandler}
+                    onCancel={hideModalHandler}/>
                 </Modal>
                 )}
                 <TextButton onCreatePost={showModalHandler}/>
@@ -80,7 +86,10 @@ export default function ArtistDetailPage(user, setUser) {
 
                 {modalIsVisible && (
                 <Modal onClose={hideModalHandler}>
-                <ArtistBio onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler}/>
+                <ArtistBio 
+                    onBodyChange={bodyChangeHandler} 
+                    onAuthorChange={authorChangeHandler}
+                    onCancel={hideModalHandler}/>
                 </Modal>
                 )}
                 <TextButton onCreatePost={showModalHandler}/>
@@ -94,7 +103,10 @@ export default function ArtistDetailPage(user, setUser) {
 
                 {modalIsVisible &&  (
                 <Modal onClose={hideModalHandler}>
-                <ArtistInfo onInfoChange={infoChangeHandler} onPersonChange={personChangeHandler}/>
+                <ArtistInfo 
+                    onInfoChange={infoChangeHandler} 
+                    onPersonChange={personChangeHandler}
+                    onCancel={hideModalHandler}/>
                 </Modal>
                 )}
 
