@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import EditArtist from '../EditArtist/EditArtist';
 import './Artist'
 
 
 export default function Artist(props) {
+ 
     
     return (
-        <div class="m-2 py-8 px-8 max-w-sm  bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+        <div class="min-w-[350px] max-w-[350px] m-2 py-8 px-8 max-w-sm  bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
         <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0" 
              src={props.img}  />
         <div class="text-center space-y-2 sm:text-left">
@@ -17,7 +19,14 @@ export default function Artist(props) {
               {props.role}
             </p>
           </div>
-          <button class="px-4 py-1 text-sm text-grey-600 font-semibold rounded-full border border-lightgrey-200 hover:text-white hover:bg-gray-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-black-600 focus:ring-offset-2">Enter</button>
+
+          <EditArtist
+            id={props.id}
+            name={props.name}
+            role={props.role}
+            updateArtist={props.updateArtist} />
+          
+          
         </div>
       </div>
     );
