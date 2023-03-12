@@ -3,6 +3,7 @@ import Artist from "../../components/Artist/Artist";
 import EditArtist from "../../components/EditArtist/EditArtist";
 import { v4 as uuidv4 } from 'uuid';
 import './ArtistIndexPage.css';
+import AddArtist from "../../components/AddArtist/AddArtist";
 
 
 
@@ -14,21 +15,21 @@ export default function ArtistsIndexPage() {
             id: 1,
             name: "Fernado",
             role: "photographer",
-            img:""
+            img: "https://i.imgur.com/Yw7BKMX.jpg" 
         },
 
         {
             id: 2,
             name: "Arturo",
             role: "photographer",
-            img:""
+            img: "https://i.imgur.com/1M8CWuL.jpg"
         },
 
         {
             id: 3,
             name: "Vanguy",
             role: "photographer",
-            img:""
+            img: "https://i.imgur.com/aGGmIEd.jpg"
         },
 
     ])
@@ -45,6 +46,16 @@ export default function ArtistsIndexPage() {
         })
         setArtists(updatedArtists)
 
+    }
+
+    function newArtist(name, role, img) {
+        const newArtist = {
+            id: uuidv4(),
+            name: name,
+            role: role,
+            img: img,
+        }
+        setArtists([...artists, newArtist])
     }
      
     const showArtists = true;
@@ -64,6 +75,12 @@ export default function ArtistsIndexPage() {
                 />
             <div className="flex flex-wrap ">
                 {artists.map((artist) => {
+                    const editArtist = 
+                    <EditArtist
+                        id={artist.id}
+                        name={artist.name}
+                        role={artist.role}
+                        updateArtist={updateArtist} />
                     
                     return (
                     <Artist 
@@ -72,11 +89,12 @@ export default function ArtistsIndexPage() {
                             name={artist.name} 
                             role={artist.role} 
                             img={artist.img}
-                            updateArtist={updateArtist} />
+                            editArtist={editArtist} />
                     );        
 
                 })}
             </div>
+            <AddArtist  newArtist={newArtist} />
 
         </>
 

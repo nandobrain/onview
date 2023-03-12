@@ -1,16 +1,43 @@
 import { checkToken } from '../../utilities/users-service'
+import ArtistName from '../../components/ArtistName/ArtistName'
+import './GalleryDetailsPage.css'
+import ArtistBio from '../../components/ArtistBio/ArtistBio'
 
-export default function GalleryDetailsPage(gallery) {
-
-    async function handleCheckToken() {
-        const expDate = await checkToken()
-        console.log(expDate)
-    }
+export default function GalleryDetailsPage(user, setUser) {
 
     return (
+        
+
+        <div className="body-container">
         <>
-            <h1>GalleryDetailsPage</h1>
-            <button onClick={handleCheckToken}>Check When my Login Expires</button>
+        <div className="body-left">
+            <ArtistName />
+
+
+
+
+
+        </div>
+
+        <div className="body-left">
+            <ArtistBio />
+
+
+    
+        </div>
+
+        
+        
+        
+        
+        
         </>
+        </div>
+        
+        
+
     )
+
+
+    
 }

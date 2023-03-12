@@ -2,6 +2,7 @@ import {useState} from 'react';
 import { Link } from 'react-router-dom';
 import ArtistInfo from '../../components/ArtistInfo/ArtistInfo';
 import ArtistBio from '../../components/ArtistBio/ArtistBio';
+import ArtistName from '../../components/ArtistName/ArtistName'
 import Bio from '../../components/Bio/Bio';
 import Info from '../../components/Info/Info';
 import Modal from '../../components/Modal/Modal';
@@ -15,12 +16,41 @@ import * as artistInfoAPI from '../../utilities/artistInfo-api'
 
 
 export default function ArtistDetailPage(user, setUser) {
+    const [name, setName] = useState('user')
+
+
+
 
 
     return (
+
+        <div className="body-container">
         <>
-            <ArtistBio />
+
+        <ArtistName />
+           
+
+
+        <ArtistInfo />
+
+            
+
+
+            <div className="body-right">
+
+              
+
+
+            
+
+
+
+
+            </div>
+            
         </>
+
+        </div>
     )
 
 }
