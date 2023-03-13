@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function ArtistsIndexPage() {
+export default function ArtistsIndexPage(user, setUser) {
     const [role, setRole] = useState('user')
     
     const [artists, setArtists] = useState([ 

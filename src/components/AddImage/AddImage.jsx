@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Card, Form, Alert, Button } from 'react-bootstrap'
+import { Image } from 'cloudinary-react'
 
 
 
@@ -8,6 +9,7 @@ export default function AddImage({ setUser }) {
 
     const [error, setError] = useState();
     const [image, setImage] = useState();
+    const [data, setData] = useState('')
 
 
      async function handleSubmit(e) {

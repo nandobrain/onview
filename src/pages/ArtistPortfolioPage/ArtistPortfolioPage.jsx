@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import ArtistInfo from '../../components/ArtistInfo/ArtistInfo';
 import ArtistName from '../../components/ArtistName/ArtistName';
 import ArtistPhoto from '../../components/ArtistPhoto/ArtistPhoto';
+import AddImage from '../../components/AddImage/AddImage';
 import './ArtistPortfolioPage.css'
 
 export default function ArtistPortfolioPage(user, setUser) {
 
 
-    
+ 
    
 
 
@@ -19,6 +20,7 @@ export default function ArtistPortfolioPage(user, setUser) {
         <>
         <div className="body-left">
             <ArtistName />
+            <AddImage />
 
 
         </div>
