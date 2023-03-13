@@ -4,6 +4,8 @@ import EditArtist from "../../components/EditArtist/EditArtist";
 import { v4 as uuidv4 } from 'uuid';
 import './ArtistIndexPage.css';
 import AddArtist from "../../components/AddArtist/AddArtist";
+import { Link } from 'react-router-dom';
+
 
 
 

@@ -5,7 +5,7 @@ import EditArtistBio from '../EditArtistBio/EditArtistBio'
 
 import './ArtistBio.css'
 
-export default function ArtistBio(props) {
+export default function ArtistBio() {
 
   const [name, setName] = useState('')
   const [body, setBody] =useState('')

@@ -33,7 +33,7 @@ export default function EditArtist(props) {
         <Modal.Body>
         <div className="w-full max-w-xs">
         <form onSubmit={(e) => {
-            
+             
             e.preventDefault();
            
             props.updateArtist(props.id, name, role);

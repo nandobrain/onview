@@ -37,7 +37,7 @@ export default function EditArtistName(props) {
             
             e.preventDefault();
            
-            props.updateNameBox(props.id, name);
+            props.updateNameBox(props.id, name, role);
         }} 
                 id="editmodal" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">

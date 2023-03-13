@@ -24,7 +24,7 @@ export default function ArtistName(setUser, props) {
       
       const updatedNameBox = nameBox.map((artist) => {
           if (id == nameBox.id) {
-              return { ...artist, name: newName, role: newRole }
+              return { ...nameBox, name: newName, role: newRole }
           }
 
           return nameBox;

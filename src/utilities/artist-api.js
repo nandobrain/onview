@@ -1,5 +1,7 @@
 import sendRequest from "./send-request";
-const BASE_URL = '/api/items';
+
+
+const BASE_URL = '/artist-api/items';
 
 
 export async function getAll() {

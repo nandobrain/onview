@@ -23,6 +23,8 @@ export default function ArtistDetailPage(user, setUser) {
         <div className="body-left">
         <ArtistName />
 
+        
+
 
         <ArtistPhoto />
    
