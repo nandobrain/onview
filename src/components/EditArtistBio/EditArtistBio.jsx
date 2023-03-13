@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import './EditArtist.css'
 
 
 
-export default function EditArtist(props) {
+
+export default function EditArtistBio(props) {
   const [show, setShow] = useState(false);
   
   const [name, setName] = useState(props.name);
-  const [role, setRole] = useState(props.role);
+  const [body, setBody] = useState(props.body);
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -28,15 +29,15 @@ export default function EditArtist(props) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Update Artist</Modal.Title>
+          <Modal.Title>Update Bio</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div className="w-full max-w-xs">
         <form onSubmit={(e) => {
-            
+            handleClose();
             e.preventDefault();
            
-            props.updateArtist(props.id, name, role);
+            props.updateArtistBio(props.id, name, body);
         }} 
                 id="editmodal" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
@@ -53,15 +54,16 @@ export default function EditArtist(props) {
             </div>
             <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" for="name">
-                Role
+                Bio
             </label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                id="role" 
+                id="location" 
                 type="text" 
-                value={role} 
-                onChange={(e) => {setRole(e.target.value)}}
+                value={body} 
+                onChange={(e) => {setBody(e.target.value)}}
                 />
             </div>
+            
      
         </form>
         </div>
@@ -78,4 +80,3 @@ export default function EditArtist(props) {
     </>
   );
 }
-

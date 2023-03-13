@@ -14,7 +14,7 @@ export default function ArtistName(setUser, props) {
           id: 4,
           name: "Fernado",
           role: "photographer",
-          img: "https://i.imgur.com/Yw7BKMX.jpg" 
+          
       }
 
 
