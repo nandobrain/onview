@@ -14,8 +14,13 @@ export default function NameBox(props) {
             <p class="text-lg text-black font-semibold">
               {props.name}
             </p>
+            <p class="text-lg text-black font-semibold">
+              {props.role}
+            </p>
            
           </div>
+
+          
 
           {props.editNameBox}
           

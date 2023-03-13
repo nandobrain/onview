@@ -5,11 +5,11 @@ import Modal from 'react-bootstrap/Modal';
 
 
 
-export default function EditArtistName(props) {
+export default function EditArtistPhoto(props) {
   const [show, setShow] = useState(false);
   
-  const [name, setName] = useState(props.name);
-  const [role, setRole] = useState(props.role);
+  const [img, setImg] = useState(props.img);
+
  
 
   const handleClose = () => setShow(false);
@@ -29,7 +29,7 @@ export default function EditArtistName(props) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Update Artist Name</Modal.Title>
+          <Modal.Title>Update Artist Photo</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <div className="w-full max-w-xs">
@@ -37,30 +37,19 @@ export default function EditArtistName(props) {
             
             e.preventDefault();
            
-            props.updateNameBox(props.id, name);
+            props.updateArtistPhoto(props.id, img);
         }} 
                 id="editmodal" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" for="name">
-                Name
+            <label className="block text-gray-700 text-sm font-bold mb-2" for="img">
+               Image URL
             </label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                id="name" 
+                id="img" 
+                placeholder="https://cludinary.com"
                 type="text" 
-                value={name}
-                onChange={(e) => {setName(e.target.value)}}
-                 />
-                
-            </div>
-            <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" for="role">
-                Role
-            </label>
-            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                id="role" 
-                type="text" 
-                value={role}
-                onChange={(e) => {setRole(e.target.value)}}
+                value={img}
+                onChange={(e) => {setImg(e.target.value)}}
                  />
                 
             </div>

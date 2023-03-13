@@ -20,7 +20,7 @@ export default function ArtistsInfo() {
             email: "email",
             socialMedia: "social media",
 
-            img: "https://i.imgur.com/Yw7BKMX.jpg" 
+             
         },
 
       
@@ -51,18 +51,13 @@ export default function ArtistsInfo() {
         <div className="ArtistInfo justify-center" >
             {showArtistsInfoBox ? (
         <>
-            <input
-                text="text"
-                onChange={(e) => {
-                    console.log(e.target.value)
-                    setRole(e.target.value)
-                }}
-                />
+          
             <div className="flex flex-wrap ">
                 {artistsInfoBox.map((artistInfoBox) => {
                     const editArtistInfoBox = 
                     <EditArtistInfoBox
                         id={artistInfoBox.id}
+                        
                         name={artistInfoBox.name}
                         location={artistInfoBox.location}
                         phoneNumber={artistInfoBox.phoneNumber}

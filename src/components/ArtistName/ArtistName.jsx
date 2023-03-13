@@ -7,6 +7,7 @@ import './ArtistName.css'
 export default function ArtistName(setUser, props) {
 
   const [name, setName] = useState('user')
+  const [role, setRole] = useState('')
     
   const [nameBox, setNameBox] = useState([ 
       {
@@ -19,11 +20,11 @@ export default function ArtistName(setUser, props) {
 
   ])
 
-  function updateNameBox(id, newName, ) {
+  function updateNameBox(id, newName, newRole) {
       
       const updatedNameBox = nameBox.map((artist) => {
           if (id == nameBox.id) {
-              return { ...artist, name: newName, }
+              return { ...artist, name: newName, role: newRole }
           }
 
           return nameBox;
@@ -43,19 +44,14 @@ export default function ArtistName(setUser, props) {
       <div className="ArtistName justify-center" >
           {showNameBox ? (
       <>
-          <input
-              text="text"
-              onChange={(e) => {
-                  console.log(e.target.value)
-                  setName(e.target.value)
-              }}
-              />
+          
           <div className="flex flex-wrap ">
               {nameBox.map((nameBox) => {
                   const editNameBox = 
                   <EditArtistName
                       id={nameBox.id}
                       name={nameBox.name}
+                      role={nameBox.role}
                       updateNameBox={updateNameBox} />
                   
                   return (
@@ -63,6 +59,7 @@ export default function ArtistName(setUser, props) {
                           key={nameBox.id}
                           id={nameBox.id}
                           name={nameBox.name} 
+                          role={nameBox.role}
                           editNameBox={editNameBox} />
                   );        
 

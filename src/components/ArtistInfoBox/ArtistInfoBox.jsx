@@ -22,7 +22,7 @@ export default function ArtistInfoBox(props) {
         </div>
       </div>
 
-      {props.EditArtistInfoBox}
+      {props.editArtistInfoBox}
   
       </>
   

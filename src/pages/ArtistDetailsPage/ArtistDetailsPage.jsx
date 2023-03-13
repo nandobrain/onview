@@ -10,6 +10,7 @@ import TextButton from '../../components/TextButton/TextButton';
 import AddImage from '../../components/AddImage/AddImage';
 import Page from '../../components/Page/Page';
 import PageName from '../../components/PageName/PageName';
+import ArtistPhoto from '../../components/ArtistPhoto/ArtistPhoto';
 import './ArtistDetailsPage.css'
 
 import * as artistInfoAPI from '../../utilities/artistInfo-api'
@@ -26,12 +27,18 @@ export default function ArtistDetailPage(user, setUser) {
 
         <div className="body-container">
         <>
-
+        <div className="body-left">
         <ArtistName />
-           
+
+
+        <ArtistPhoto />
+   
 
 
         <ArtistInfo />
+
+
+        </div>
 
             
 

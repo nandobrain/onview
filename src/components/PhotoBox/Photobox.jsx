@@ -1,6 +1,4 @@
 
-
-
 export default function PhotoBox(setUser, props) {
 
     return (

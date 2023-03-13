@@ -9,10 +9,12 @@ import Page from '../../components/Page/Page';
 import PageName from '../../components/PageName/PageName';
 import Artist from "../../components/Artist/Artist";
 import ArtistName from '../../components/ArtistName/ArtistName';
-import PhotoBox from '../../components/PhotoBox/Photobox';
+import ArtistPhoto from '../../components/ArtistPhoto/ArtistPhoto';
 import './ArtistPortfolioPage.css'
 
-export default function ArtistPortfolioPage() {
+export default function ArtistPortfolioPage(user, setUser) {
+
+   
 
 
     return (
@@ -23,8 +25,7 @@ export default function ArtistPortfolioPage() {
         <div className="body-left">
             <ArtistName />
 
-            <PhotoBox />
-
+            
 
 
 
@@ -32,6 +33,7 @@ export default function ArtistPortfolioPage() {
         </div>
 
         <div className="body-right">
+            <ArtistPhoto />
 
             <ArtistInfo />
 
