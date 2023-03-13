@@ -20,12 +20,6 @@ export default function ArtistPortfolioPage(user, setUser) {
         <div className="body-left">
             <ArtistName />
 
-            
-
-            
-
-
-
 
         </div>
 
@@ -34,19 +28,10 @@ export default function ArtistPortfolioPage(user, setUser) {
 
             <ArtistInfo />
 
-
-
-
         </div>
 
-        
-        
-        
-        
-        
         </>
         </div>
-        
         
 
     )

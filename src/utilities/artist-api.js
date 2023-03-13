@@ -1,9 +1,10 @@
 import sendRequest from "./send-request";
+const BASE_URL = '/api/users';
 
+export async function signUp(userData) {
+  return sendRequest(BASE_URL, 'POST', userData);
+}
 
-const BASE_URL = '/artist-api/items';
-
-
-export async function getAll() {
-    return sendRequest(BASE_URL);
-  }
+export async function login(credentials) {
+  return sendRequest(`${BASE_URL}/login`, 'POST', credentials);
+} 

@@ -6,7 +6,7 @@ import ArtistName from '../../components/ArtistName/ArtistName'
 import ArtistPhoto from '../../components/ArtistPhoto/ArtistPhoto';
 import './ArtistDetailsPage.css'
 
-import * as artistInfoAPI from '../../utilities/artistInfo-api'
+
 
 
 export default function ArtistDetailPage(user, setUser) {
