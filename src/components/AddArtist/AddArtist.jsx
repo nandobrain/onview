@@ -1,21 +1,39 @@
 import React, { useState,  } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import * as artistAPI from '../../utilities/artist-api'
 
 
 
-
-export default function AddArtist(props) {
+export default function AddArtist({newArtist}) {
   const [show, setShow] = useState(false);
   
-  const [name, setName] = useState('');
-  const [role, setRole] = useState('');
-  const [img, setImg] = useState('');
-
+  const [artist, setArtist] = useState([ 
+    {
+        
+        name: "",
+        role: "",
+        img: "" 
+    },
+ 
+  ])
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  
+  async function createArtist(e) {
+   
+    e.preventDefault()
+    const artistObj = await artistAPI.addArtist(artist);
+    console.log('newArtist', artistObj)
+    newArtist(artistObj)
+  }
+
+  function handleChange(event) {
+    setArtist({
+      ...artist, [event.target.name] : event.target.value
+    })
+  }
+  console.log(artist)
 
   return (
     <>
@@ -35,15 +53,7 @@ export default function AddArtist(props) {
         </Modal.Header>
         <Modal.Body>
         <div className="w-full max-w-xs">
-        <form onSubmit={(e) => {
-            e.preventDefault();
-            setName('');
-            setRole('');
-            setImg('');
-
-           
-            props.newArtist(name, role, img);
-        }} 
+        <form onSubmit={createArtist} 
                 id="editmodal" className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -51,10 +61,11 @@ export default function AddArtist(props) {
             </label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                 id="name" 
+                name="name"
                 placeholder="name"
                 type="text" 
-                value={name}
-                onChange={(e) => {setName(e.target.value)}}
+                value={artist.name}
+                onChange={(e) => {handleChange(e)}}
                  />
                 
             </div>
@@ -64,10 +75,11 @@ export default function AddArtist(props) {
             </label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                 id="role" 
+                name="role"
                 placeholder="photographer"
                 type="text" 
-                value={role} 
-                onChange={(e) => {setRole(e.target.value)}}
+                value={artist.role} 
+                onChange={(e) => {handleChange(e)}}
                 />
             </div>
             <div className="mb-4">
@@ -76,14 +88,15 @@ export default function AddArtist(props) {
             </label>
             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                 id="img" 
+                name="img"
                 placeholder="https://cludinary.com"
                 type="text" 
-                value={img}
-                onChange={(e) => {setImg(e.target.value)}}
+                value={artist.img}
+                onChange={(e) => {handleChange(e)}}
                  />
                 
             </div>
-            
+         
      
         </form>
         
@@ -95,7 +108,8 @@ export default function AddArtist(props) {
           <button className="bg-slate-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
                   onClick={handleClose}>Close</button>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
-                  onClick={handleClose}
+                  type='submit'
+                  for='editmodal'
                   form="editmodal">Add</button>
           
         </Modal.Footer>

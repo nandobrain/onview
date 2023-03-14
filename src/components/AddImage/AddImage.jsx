@@ -5,7 +5,7 @@ import { Image } from 'cloudinary-react'
 
 
 
-export default function AddImage({ setUser }) {
+export default function AddImage({ setUser, addImage }) {
 
     const [error, setError] = useState();
     const [image, setImage] = useState();
@@ -39,8 +39,8 @@ export default function AddImage({ setUser }) {
         const submitPost = {
             image: imageUrl,
         };
-        console.log(submitPost)
-       await axios.post("http://localhost:3001/api/image/store-image", submitPost);
+        addImage(submitPost)
+    //    await axios.post("http://localhost:3001/api/image/store-image", submitPost);
         } catch (err) {
         err.response.data.msg && setError(err.response.data.msg);
         }

@@ -25,7 +25,7 @@ export default function ArtistDetailPage(user, setUser) {
         <>
         <div className="body-left">
 
-        <img src={Image} alt="add image" />    
+          
         <ArtistName />
 
         

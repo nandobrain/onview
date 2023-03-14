@@ -9,11 +9,11 @@ import AddArtist from "../../components/AddArtist/AddArtist";
 
 
 export default function ArtistsInfo() {
-    const [role, setRole] = useState('user')
+    
     
     const [artistsInfoBox, setArtistsInfoBox] = useState([ 
         {
-            id: 1,
+            
             name: "Artist",
             location: "city",
             PhoneNumber: "number",

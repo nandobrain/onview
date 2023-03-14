@@ -1,19 +1,17 @@
 import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid';
 import NameBox from '../NameBox/NameBox';
 import EditArtistName from '../EditArtistName/EditArtistName';
 import './ArtistName.css'
 
-export default function ArtistName(setUser, props) {
+export default function ArtistName() {
 
-  const [name, setName] = useState('user')
-  const [role, setRole] = useState('')
+
     
   const [nameBox, setNameBox] = useState([ 
       {
-          id: 4,
-          name: "Fernado",
-          role: "photographer",
+          
+          name: "Artist Name",
+          role: "Role",
           
       }
 

@@ -19,8 +19,8 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/gallery/detail" element={<GalleryDetailsPage user={user} setUser={setUser} />} />
-            <Route path="/about" element={<ArtistDetailPage user={user} setUser={setUser} />} />
+            {/* <Route path="/gallery/detail" element={<GalleryDetailsPage user={user} setUser={setUser} />} />
+            <Route path="/about" element={<ArtistDetailPage user={user} setUser={setUser} />} /> */}
             <Route path="/work" element={<ArtistPortfolioPage user={user} setUser={setUser} />} />
             <Route path="/artist" element={<ArtistsIndexPage user={user} setUser={setUser} />} />
           </Routes>

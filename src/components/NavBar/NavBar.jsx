@@ -21,7 +21,7 @@ export default function NavBar({ user, setUser }) {
             <Link to="/work">WORK</Link>
             &nbsp;&nbsp;
             &nbsp;&nbsp;
-            <Link to="/about">ABOUT</Link>
+            {/* <Link to="/about">ABOUT</Link> */}
             {/* &nbsp;&nbsp; {user.name} */}
             &nbsp;&nbsp;
             &nbsp;&nbsp;

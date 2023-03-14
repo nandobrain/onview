@@ -6,7 +6,7 @@ require('dotenv').config()
 require('./config/database')
 const cors = require('cors')
 
-const mongoose = require("mongoose");
+
 
 const app = express();
 app.use(cors())
@@ -22,6 +22,7 @@ app.use(require('./config/checkToken'))
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/image', require('./routes/api/image'))
+app.use('/api/artists', require('./routes/api/artists'))
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get('/*', function(req, res) {

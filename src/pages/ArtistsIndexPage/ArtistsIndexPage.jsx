@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 export default function ArtistsIndexPage(user, setUser) {
     const [role, setRole] = useState('user')
     
+    
     const [artists, setArtists] = useState([ 
         {
             id: 1,
@@ -29,7 +30,7 @@ export default function ArtistsIndexPage(user, setUser) {
 
         {
             id: 3,
-            name: "Vanguy",
+            name: "Mr Dog",
             role: "photographer",
             img: "https://i.imgur.com/aGGmIEd.jpg"
         },
@@ -50,13 +51,8 @@ export default function ArtistsIndexPage(user, setUser) {
 
     }
 
-    function newArtist(name, role, img) {
-        const newArtist = {
-            id: uuidv4(),
-            name: name,
-            role: role,
-            img: img,
-        }
+    function newArtist(newArtist) {
+     
         setArtists([...artists, newArtist])
     }
      
@@ -68,13 +64,7 @@ export default function ArtistsIndexPage(user, setUser) {
         <div className="ArtistIndexPage justify-center" >
             {showArtists ? (
         <>
-            <input
-                text="text"
-                onChange={(e) => {
-                    console.log(e.target.value)
-                    setRole(e.target.value)
-                }}
-                />
+           
             <div className="flex flex-wrap ">
                 {artists.map((artist) => {
                     const editArtist = 
