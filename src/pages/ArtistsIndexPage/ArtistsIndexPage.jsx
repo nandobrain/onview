@@ -35,6 +35,27 @@ export default function ArtistsIndexPage(user, setUser) {
             img: "https://i.imgur.com/aGGmIEd.jpg"
         },
 
+        {
+            id: 4,
+            name: "Franklin",
+            role: "photographer",
+            img: "https://i.imgur.com/Z9Ra17I.jpg"
+        },
+
+        {
+            id: 4,
+            name: "Spencer",
+            role: "Painter",
+            img: "https://i.imgur.com/okVG62B.jpg"
+        },
+
+        {
+            id: 4,
+            name: "Ariel",
+            role: "Painter",
+            img: "https://i.imgur.com/hpEF0KJ.jpg"
+        },
+
     ])
 
     function updateArtist(id, newName, newRole) {
