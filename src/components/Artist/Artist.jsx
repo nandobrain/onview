@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import EditArtist from '../EditArtist/EditArtist';
 import './Artist'
 
 

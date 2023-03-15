@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
-
-
 
 export default function EditArtistPhoto(props) {
   const [show, setShow] = useState(false);
-  
   const [img, setImg] = useState(props.img);
-
- 
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

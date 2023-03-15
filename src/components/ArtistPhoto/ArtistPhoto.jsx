@@ -2,9 +2,6 @@ import { useState } from "react"
 import ArtistPhotoBox from "../ArtistPhotoBox/ArtistPhotoBox"
 import EditArtistPhoto from "../EditArtistPhoto/EditArtistPhoto"
 
-
-
-
 export default function ArtistPhoto(setUser, props) {
 
     const [img, setImg] = useState('user')
@@ -12,11 +9,8 @@ export default function ArtistPhoto(setUser, props) {
     const [artistsPhotoBox, setArtistsPhotoBox] = useState([ 
         {
             id: 6,
-        
             img: "https://i.imgur.com/ojtreYh.jpg" 
         },
-
-
     ])
 
     function updateArtistPhotoBox(id, newImg) {
@@ -32,12 +26,8 @@ export default function ArtistPhoto(setUser, props) {
         setArtistsPhotoBox(updatedArtistsPhotoBox)
 
     }
-
-  
-     
+ 
     const showArtistsPhotoBox = true;
-
-
     return (
 
         <div className="ArtistIndexPage justify-center" >

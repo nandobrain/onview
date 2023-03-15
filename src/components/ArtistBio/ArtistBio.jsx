@@ -1,28 +1,18 @@
 import { useState } from 'react'
-import  Modal  from 'react-modal'
 import ArtistBioBox from '../ArtistBioBox/ArtistBioBox'
 import EditArtistBio from '../EditArtistBio/EditArtistBio'
 
 import './ArtistBio.css'
 
 export default function ArtistBio() {
-
   const [name, setName] = useState('')
-  const [body, setBody] =useState('')
-
-  const [role, setRole] = useState('user')
-    
+  const [body, setBody] =useState('')  
   const [artistsBioBox, setArtistsBioBox] = useState([ 
       {
           id: 5,
           name: "Bio",
-          body: "Body",
-
-           
+          body: "Body",      
       }
-
-    
-
   ])
 
   function updateArtistBioBox(id, newName, newBody) {
@@ -38,9 +28,7 @@ export default function ArtistBio() {
       setArtistsBioBox(updatedArtistsBioBox)
 
   }
-
-
-   
+ 
   const showArtistsBioBox = true;
 
 

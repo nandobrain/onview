@@ -4,7 +4,7 @@ const Artist = require('../../models/artist')
 
 module.exports = {
     createArtist,
-    // editArtistInfo,
+    getArtists
     // editArtistName
 
 }
@@ -25,6 +25,12 @@ async function createArtist(req, res) {
     }
 }
 
+
+async function getArtists(req, res) {
+    const artists = await Artist.find({})
+    res.json(artists)
+    console.log(artists)
+}
 // async function editArtistInfo(req, res) {
 //     try {
 //         const user = await User.create(req.body);

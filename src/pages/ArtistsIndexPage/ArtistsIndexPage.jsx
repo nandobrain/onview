@@ -1,62 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Artist from "../../components/Artist/Artist";
 import EditArtist from "../../components/EditArtist/EditArtist";
-import { v4 as uuidv4 } from 'uuid';
 import './ArtistIndexPage.css';
 import AddArtist from "../../components/AddArtist/AddArtist";
-import { Link } from 'react-router-dom';
+import * as artistAPI from '../../utilities/artist-api';
 
 
+export default function ArtistsIndexPage() {
+    const [artists, setArtists] = useState([])
 
-
-export default function ArtistsIndexPage(user, setUser) {
-    const [role, setRole] = useState('user')
-    
-    
-    const [artists, setArtists] = useState([ 
-        {
-            id: 1,
-            name: "Fernado",
-            role: "photographer",
-            img: "https://i.imgur.com/Yw7BKMX.jpg" 
-        },
-
-        {
-            id: 2,
-            name: "Arturo",
-            role: "photographer",
-            img: "https://i.imgur.com/1M8CWuL.jpg"
-        },
-
-        {
-            id: 3,
-            name: "Mr Dog",
-            role: "photographer",
-            img: "https://i.imgur.com/aGGmIEd.jpg"
-        },
-
-        {
-            id: 4,
-            name: "Franklin",
-            role: "photographer",
-            img: "https://i.imgur.com/Z9Ra17I.jpg"
-        },
-
-        {
-            id: 4,
-            name: "Spencer",
-            role: "Painter",
-            img: "https://i.imgur.com/okVG62B.jpg"
-        },
-
-        {
-            id: 4,
-            name: "Ariel",
-            role: "Painter",
-            img: "https://i.imgur.com/hpEF0KJ.jpg"
-        },
-
-    ])
+    useEffect(function(){
+        async function getArtists() {
+          const artists = await artistAPI.getArtists()
+          setArtists(artists)
+          console.log(artists)
+        }
+        getArtists()
+      }, []) 
 
     function updateArtist(id, newName, newRole) {
         
@@ -64,9 +24,7 @@ export default function ArtistsIndexPage(user, setUser) {
             if (id == artist.id) {
                 return { ...artist, name: newName, role: newRole }
             }
-
-            return artist;
-            
+            return artist;   
         })
         setArtists(updatedArtists)
 
@@ -78,7 +36,6 @@ export default function ArtistsIndexPage(user, setUser) {
     }
      
     const showArtists = true;
-
 
     return (
 
@@ -104,18 +61,13 @@ export default function ArtistsIndexPage(user, setUser) {
                             img={artist.img}
                             editArtist={editArtist} />
                     );        
-
                 })}
             </div>
             <AddArtist  newArtist={newArtist} />
-
         </>
-
             ) : (
                 <p>Must Login</p>
-
            )}
-
         </div>
     )
 }

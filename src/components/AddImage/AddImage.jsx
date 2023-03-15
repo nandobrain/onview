@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Card, Form, Alert, Button } from 'react-bootstrap'
-import { Image } from 'cloudinary-react'
 
 
 

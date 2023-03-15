@@ -1,30 +1,16 @@
 import { useState } from "react";
-import Artist from "../../components/Artist/Artist";
-import EditArtist from "../../components/EditArtist/EditArtist";
-import { v4 as uuidv4 } from 'uuid';
 import ArtistInfoBox from "../ArtistInfoBox/ArtistInfoBox";
 import EditArtistInfoBox from "../EditArtistInfoBox/EditArtistInfoBox";
-import AddArtist from "../../components/AddArtist/AddArtist";
-
-
 
 export default function ArtistsInfo() {
-    
-    
     const [artistsInfoBox, setArtistsInfoBox] = useState([ 
-        {
-            
+        { 
             name: "Artist",
             location: "city",
             PhoneNumber: "number",
             email: "email",
-            socialMedia: "social media",
-
-             
+            socialMedia: "social media",     
         },
-
-      
-
     ])
 
     function updateArtistInfoBox(id, newName, newLocation, newPhoneNumber, newEmail, newSocialMedia) {
@@ -33,18 +19,13 @@ export default function ArtistsInfo() {
             if (id == artistInfoBox.id) {
                 return { ...artistInfoBox, name: newName, location: newLocation, phoneNumber: newPhoneNumber, email: newEmail, socialMedia: newSocialMedia }
             }
-
-            return artistInfoBox;
-            
+            return artistInfoBox;  
         })
         setArtistsInfoBox(updatedArtistsInfoBox)
 
     }
 
-
-     
     const showArtistsInfoBox = true;
-
 
     return (
 

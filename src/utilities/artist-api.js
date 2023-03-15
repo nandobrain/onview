@@ -5,3 +5,6 @@ export async function addArtist(artist) {
   return sendRequest(`${BASE_URL}`, 'POST', {artist});
 }
 
+export async function getArtists() {
+  return sendRequest(`${BASE_URL}`)
+}

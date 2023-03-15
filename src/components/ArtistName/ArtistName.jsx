@@ -3,19 +3,12 @@ import NameBox from '../NameBox/NameBox';
 import EditArtistName from '../EditArtistName/EditArtistName';
 import './ArtistName.css'
 
-export default function ArtistName() {
-
-
-    
+export default function ArtistName() { 
   const [nameBox, setNameBox] = useState([ 
-      {
-          
+      {   
           name: "Artist Name",
-          role: "Role",
-          
+          role: "Role",  
       }
-
-
   ])
 
   function updateNameBox(id, newName, newRole) {
@@ -32,10 +25,7 @@ export default function ArtistName() {
 
   }
 
-
-   
   const showNameBox = true;
-
 
   return (
 

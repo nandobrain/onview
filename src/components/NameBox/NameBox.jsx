@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import EditArtist from '../EditArtist/EditArtist';
-
 
 
 export default function NameBox(props) {

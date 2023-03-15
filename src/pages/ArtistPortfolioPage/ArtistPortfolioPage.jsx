@@ -15,14 +15,7 @@ export default function ArtistPortfolioPage() {
         setImages([...images, img])
     }
 
-
- 
-   
-
-
     return (
-        
-
         <div className="body-container">
         <>
         <Routes>
@@ -32,18 +25,16 @@ export default function ArtistPortfolioPage() {
         </Routes>
         
         <div className="body-left">
+
             <ArtistName />
             {
                 images.map(image => <img src={image.image} />)
             }
             <AddImage addImage={addImage}/>
-
-
         </div>
 
         <div className="body-right">
-           
-
+            
             <ArtistInfo />
 
         </div>

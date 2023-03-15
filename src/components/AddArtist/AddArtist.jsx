@@ -1,4 +1,4 @@
-import React, { useState,  } from 'react';
+import React, { useState, useEffect  } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import * as artistAPI from '../../utilities/artist-api'
@@ -7,7 +7,6 @@ import * as artistAPI from '../../utilities/artist-api'
 
 export default function AddArtist({newArtist}) {
   const [show, setShow] = useState(false);
-  
   const [artist, setArtist] = useState([ 
     {
         
@@ -17,6 +16,7 @@ export default function AddArtist({newArtist}) {
     },
  
   ])
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
